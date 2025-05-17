@@ -52,6 +52,7 @@ svg path {
   align-items: start;
   gap: 8px;
   border-radius: 8px;
+  margin: 8px;
 }
 
 .sidebar .nav-line .icon {
