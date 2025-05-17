@@ -1,5 +1,6 @@
 :root {
-
+  --blue: #156CC2;
+  --grey: #B6C2CC;
 }
 
 * {
@@ -8,9 +9,6 @@
   box-sizing: border-box;
 }
 
-svg path {
-  fill: #FFFFFF;
-}
 
 .container {
   display: grid;
@@ -25,13 +23,17 @@ svg path {
 .sidebar {
   grid-area: 1 / 1 / 3 / 2;
 
-  background-color: #156CC2;
+  background-color: var(--blue);
   
   display: grid;
   grid-template-columns: 90%;
   grid-template-rows: fit-content(1rem) fit-content(1rem) fit-content(1rem);
   gap: 30px;
   justify-content: center;
+}
+
+.sidebar svg path {
+  fill: #FFFFFF;
 }
 
 .logo {
@@ -84,12 +86,37 @@ svg path {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr;
+  padding: 16px;
 }
 
+.search {
+  margin: 8px;
+  height: 1.5rem;
+  display: grid;
+  grid-template-columns: fit-content(1%) 1fr;
+  grid-template-rows: 1rem;
+  gap: 10px;
+  align-items: center;
+}
+
+.header svg {
+  height: 100%;
+  justify-self: center;
+  align-self: center;
+}
+
+.header input {
+  height: 1.5rem;
+  width: 80%;
+  border-radius: 15px;
+  background-color: var(--grey);
+  border: 0;
+}
 .main-content {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr 1fr;
+  background-color: var(--grey);
 }
 
 .main-content .projects {
