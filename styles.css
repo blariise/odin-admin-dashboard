@@ -1,6 +1,7 @@
 :root {
   --blue: #156CC2;
-  --grey: #B6C2CC;
+  --grey: #C0C6CC;
+  --dark-grey: #686869;
   --user-avatar: url(./images/user-avatar.png);
 }
 
@@ -195,6 +196,7 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr 1fr;
+  gap: 20px;
 }
 
 .main-content .projects {
@@ -205,6 +207,12 @@
   grid-template-rows: fit-content(1rem) 1fr;
   gap: 10px;
 }
+
+/*
+ * ========
+ * PROJECTS
+ * ========
+*/
 
 .projects .title {
   font-weight: bold;
@@ -243,7 +251,7 @@
 
 .card .project-description {
   font-size: 0.8rem;
-  color: var(--grey);
+  color: var(--dark-grey);
 }
 
 .card .project-icons {
@@ -258,6 +266,43 @@
 .card .project-icons svg {
   height: 1.5rem;
   width: auto;
+}
+
+/*
+ * =============
+ * ANNOUNCEMENTS
+ * =============
+*/
+
+.main-content .announcements {
+  display: grid;
+  grid-template-rows: fit-content(1rem) 1fr;
+  gap: 10px;
+}
+
+.announcements .title {
+  font-weight: bold;
+}
+
+.announcements-card {
+  background-color: #FFFFFF;
+  padding: 16px;
+
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-rows: repeat(2, fit-content(100%));
+  gap: 20px;
+}
+
+.announcement-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.announcement-description {
+  font-size: 0.7rem;
+  color: var(--dark-grey);
 }
 
 .main-content .trending {
