@@ -1,6 +1,7 @@
 :root {
   --blue: #156CC2;
   --grey: #B6C2CC;
+  --user-avatar: url(./images/user-avatar.png);
 }
 
 * {
@@ -12,8 +13,8 @@
 
 .container {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  grid-template-rows: 1fr 6fr;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 200px 6fr;
 }
 
 /*
@@ -24,56 +25,64 @@
 
 .header {
   grid-area: 1 / 2 / 2 / 3;
-}
+  
+  padding: 16px;
 
-.header {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  padding: 16px;
-}
-
-.header input {
-  height: 1.5rem;
-  width: 80%;
-  border-radius: 15px;
-  background-color: var(--grey);
-  border: 0;
+  grid-template-rows: 50% 50%;
+  column-gap: 10px;
 }
 
 .search {
-  margin: 8px;
-  height: 2rem;
+  grid-area: 1 / 1 / 2 / 2;
+
   display: grid;
-  grid-template-columns: fit-content(1%) 1fr;
-  grid-template-rows: 1rem;
+  grid-template-columns: 1.5rem 1fr;
+  grid-template-rows: 2rem 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.search input {
+  height: 1.5rem;
+  border-radius: 15px;
+  background-color: var(--grey);
+  border: 0;
+  padding: 10px;
+}
+
+.manage {
+  justify-self: end;
+  grid-area: 1 / 2 / 2 / 3;
+
+  display: grid;
+  grid-template-columns: 1.5rem 2.5rem 1fr;
+  grid-template-rows: 2rem 1fr;
   gap: 10px;
   align-items: center;
 }
 
-.search svg {
-  height: 100%;
-  justify-self: center;
-  align-self: center;
-}
-
-.manage {
-  margin: 8px;
-  height: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr 3fr;
-  align-items: center;
-}
-
-.manage svg {
-  height: 16px;
-}
-
-.user-avatar {
-  height: 2rem;
-  width: 2rem;
-  border: 1px solid red;
+.manage .user-avatar {
+  height: 2.5rem;
+  width: 2.5rem;
   border-radius: 50%;
+
+  background-image: var(--user-avatar);
+  background-position: center;
+  background-size: cover;
+}
+
+.manage .full-name {
+  font-weight: bold;
+}
+
+.user-info {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.buttons {
+  grid-area: 2 / 2 / 3 / 3;
 }
 
 /*
@@ -89,7 +98,7 @@
   padding: 16px;
 
   display: grid;
-  grid-template-rows: repeat(3, fit-content(1rem));
+  grid-template-rows: 2rem repeat(2, fit-content(1rem));
   gap: 30px;
 }
 
